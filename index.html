@@ -14,7 +14,7 @@ nav{position:sticky;top:0;z-index:30;background:#050505ee;border-bottom:1px soli
 .deadlines{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:25px}.deadline{background:#10090b;border:1px solid #42151a;padding:18px 12px;text-align:center;position:relative}.deadline-date{font-size:15px;color:#eee1cc}.deadline-name{font-size:12px;margin-top:5px;color:#aaa}.status{display:inline-block;margin-top:12px;padding:5px 9px;border:1px solid #555;font-size:10px;letter-spacing:1px}.status.green{background:#183b20;border-color:#3a9a4e;color:#b9ffc5}.status.red{background:#4a1015;border-color:#b82a34;color:#ffb2b7}.status.yellow{background:#584b0b;border-color:#d4b72c;color:#fff2a1}.status.gray{background:#1b1b1b;border-color:#444;color:#999}
 /* modal */
 .modal{display:none;position:fixed;inset:0;background:#000b;z-index:100;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{width:min(620px,100%);background:#10090b;border:1px solid #b51e27;box-shadow:0 20px 80px #000;padding:30px;position:relative}.close{position:absolute;right:12px;top:8px;background:none;border:0;color:#eee;font-size:30px;cursor:pointer}.modal-box h2{margin-top:0;color:#e3262b;font:700 30px Cinzel}.contact-line{margin:15px 0;padding:15px;border:1px solid #3f151a;background:#090607}.contact-line strong{display:block;font-family:Cinzel;text-transform:uppercase;color:#aaa;font-size:12px}.contact-line a{color:#ff3036;word-break:break-word}.notice{margin-top:20px;border-left:3px solid #d4b72c;background:#1b1605;padding:15px;color:#fff0a0}.notice a{color:#fff0a0}
-ul{padding-left:22px}
+.submit-form{display:grid;gap:12px;margin-top:20px}.submit-form label{font:700 11px Cinzel;text-transform:uppercase;color:#aaa}.submit-form input,.submit-form textarea,.submit-form select{width:100%;padding:12px;background:#070607;border:1px solid #4b171c;color:#eee1cc;font:14px "Libre Baskerville",Georgia,serif}.submit-form textarea{min-height:90px;resize:vertical}.submit-help{font-size:12px;color:#aaa;margin-top:-4px}.submit-submit{width:100%;margin-top:5px}.required{color:#e3262b}ul{padding-left:22px}
 @media(max-width:900px){.deadlines{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.stat:last-child{grid-column:1/-1}.links a:not(.ig){display:none}}
 @media(max-width:520px){.deadlines{grid-template-columns:1fr}.timer{grid-template-columns:repeat(2,1fr)}.hero{min-height:76vh}.date{font-size:18px}.tag{font-size:20px}section{padding:55px 0}}
 </style>
@@ -89,61 +89,157 @@ ul{padding-left:22px}
   <div class="modal-box">
     <button class="close" id="closeModal" aria-label="Close">×</button>
     <h2 id="modalTitle" data-de="Film einreichen" data-en="Submit Your Film">Submit Your Film</h2>
-    <p data-de="Die Einreichung für Vol. 1 wird bald über FilmFreeway möglich sein. Bis dahin kannst du uns direkt kontaktieren." data-en="Submissions for Vol. 1 will soon be available through FilmFreeway. Until then, you can contact us directly.">Submissions for Vol. 1 will soon be available through FilmFreeway. Until then, you can contact us directly.</p>
+    <p data-de="Fülle das Formular aus und sende uns deinen Film über einen nicht gelisteten YouTube- oder Vimeo-Link. Die Angaben werden per E-Mail an das Festival gesendet." data-en="Fill out the form and submit your film using an unlisted YouTube or Vimeo link. Your details will be sent to the festival by email.">Fill out the form and submit your film using an unlisted YouTube or Vimeo link. Your details will be sent to the festival by email.</p>
     <div class="contact-line"><strong>Instagram</strong><a href="https://www.instagram.com/chris.storm_/?stkn=bXMxNjhuNnltZnZn&utm_source=qr" target="_blank">@chris.storm_</a></div>
     <div class="contact-line"><strong>Email</strong><a href="mailto:chrisstormfilms@gmail.com">chrisstormfilms@gmail.com</a></div>
+    <form class="submit-form" id="submissionForm">
+      <label for="filmTitle" data-de="Filmtitel *" data-en="Film Title *">Film Title *</label>
+      <input id="filmTitle" name="filmTitle" required>
+      <label for="director" data-de="Regisseur / Filmemacher *" data-en="Director / Filmmaker *">Director / Filmmaker *</label>
+      <input id="director" name="director" required>
+      <label for="email" data-de="E-Mail *" data-en="Email *">Email *</label>
+      <input id="email" name="email" type="email" required>
+      <label for="country" data-de="Land *" data-en="Country *">Country *</label>
+      <input id="country" name="country" required>
+      <label for="runtime" data-de="Laufzeit *" data-en="Runtime *">Runtime *</label>
+      <input id="runtime" name="runtime" placeholder="e.g. 12:34" required>
+      <label for="genre" data-de="Genre" data-en="Genre">Genre</label>
+      <input id="genre" name="genre" placeholder="e.g. Psychological Horror">
+      <label for="filmLink" data-de="Film-Link (YouTube/Vimeo) *" data-en="Film Link (YouTube/Vimeo) *">Film Link (YouTube/Vimeo) *</label>
+      <input id="filmLink" name="filmLink" type="url" placeholder="https://youtu.be/..." required>
+      <div class="submit-help" data-de="Bitte den Film als YouTube „Nicht gelistet“ oder privaten/nicht öffentlichen Vimeo-Link bereitstellen. Full HD (1080p) wird empfohlen." data-en="Please provide the film as a YouTube Unlisted or private/unlisted Vimeo link. Full HD (1080p) is recommended.">Please provide the film as a YouTube Unlisted or private/unlisted Vimeo link. Full HD (1080p) is recommended.</div>
+      <label for="description" data-de="Kurzbeschreibung" data-en="Short Synopsis">Short Synopsis</label>
+      <textarea id="description" name="description"></textarea>
+      <label><input type="checkbox" id="rights" required style="width:auto;margin-right:8px"> <span data-de="Ich besitze die erforderlichen Rechte und akzeptiere die Festivalbedingungen. *" data-en="I own the necessary rights and accept the festival terms. *">I own the necessary rights and accept the festival terms. *</span></label>
+      <button class="btn primary submit-submit" type="submit" data-de="EINREICHUNG PER E-MAIL SENDEN →" data-en="SEND SUBMISSION BY EMAIL →">SEND SUBMISSION BY EMAIL →</button>
+    </form>
     <div class="notice" data-de="<strong>Demnächst auf FilmFreeway</strong><br>Der Festival-Account wird aktuell vorbereitet. Sobald der Festival-Link aktiv ist, kann dort direkt eingereicht werden.<br><br><a href="https://filmfreeway.com/" target="_blank">FilmFreeway besuchen →</a>" data-en="<strong>Coming soon on FilmFreeway</strong><br>The festival page is currently being prepared. As soon as the festival link is active, films can be submitted there directly.<br><br><a href="https://filmfreeway.com/" target="_blank">Visit FilmFreeway →</a>"> <strong>Coming soon on FilmFreeway</strong><br>The festival page is currently being prepared. As soon as the festival link is active, films can be submitted there directly.<br><br><a href="https://filmfreeway.com/" target="_blank">Visit FilmFreeway →</a></div>
   </div>
 </div>
 
 <script>
 const DATES={
- opening:new Date('2026-09-01T00:00:00+02:00'),
- regular:new Date('2026-10-31T23:59:59+01:00'),
- late:new Date('2026-11-27T23:59:59+01:00'),
- notification:new Date('2026-11-28T00:00:00+01:00'),
- event:new Date('2026-12-18T00:00:00+01:00')
+  opening:new Date('2026-09-01T00:00:00+02:00'),
+  regular:new Date('2026-10-31T23:59:59+01:00'),
+  late:new Date('2026-11-27T23:59:59+01:00'),
+  notification:new Date('2026-11-28T00:00:00+01:00'),
+  event:new Date('2026-12-18T00:00:00+01:00')
 };
-const labels={en:{regular:'Countdown to Regular Deadline',late:'Countdown to Late Deadline',event:'Countdown to Festival',open:'SUBMISSIONS OPEN',days:'Days',hours:'Hours',minutes:'Minutes',seconds:'Seconds',past:'PAST',next:'NEXT',current:'NOW'},de:{regular:'Countdown bis zur regulären Deadline',late:'Countdown bis zur späten Deadline',event:'Countdown bis zum Festival',open:'EINREICHUNGEN OFFEN',days:'Tage',hours:'Stunden',minutes:'Minuten',seconds:'Sekunden',past:'VORBEI',next:'ALS NÄCHSTES',current:'JETZT'}};
+const ORDER=['opening','regular','late','notification','event'];
+const labels={
+  en:{regular:'Countdown to Regular Deadline',late:'Countdown to Late Deadline',event:'Countdown to Festival',open:'SUBMISSIONS OPEN',days:'Days',hours:'Hours',minutes:'Minutes',seconds:'Seconds',past:'PAST',next:'NEXT',current:'NOW'},
+  de:{regular:'Countdown bis zur regulären Deadline',late:'Countdown bis zur späten Deadline',event:'Countdown bis zum Festival',open:'EINREICHUNGEN OFFEN',days:'Tage',hours:'Stunden',minutes:'Minuten',seconds:'Sekunden',past:'VORBEI',next:'ALS NÄCHSTES',current:'JETZT'}
+};
 let lang='en';
-function setLang(l){lang=l;document.querySelectorAll('[data-de][data-en]').forEach(e=>e.innerHTML=l==='de'?e.dataset.de:e.dataset.en);document.documentElement.lang=l;document.getElementById('de').classList.toggle('active',l==='de');document.getElementById('en').classList.toggle('active',l==='en');updateTimer();updateStatuses();}
+
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('[data-de][data-en]').forEach(e=>{
+    e.innerHTML=l==='de'?e.dataset.de:e.dataset.en;
+  });
+  document.documentElement.lang=l;
+  document.getElementById('de').classList.toggle('active',l==='de');
+  document.getElementById('en').classList.toggle('active',l==='en');
+  updateTimer();
+  updateStatuses();
+}
+
+function getPhase(now){
+  if(now < DATES.opening) return null;
+  if(now < DATES.regular) return {current:'opening',next:'regular'};
+  if(now < DATES.late) return {current:'late',next:'notification'};
+  if(now < DATES.notification) return {current:'notification',next:'event'};
+  if(now < DATES.event) return {current:'event',next:null};
+  return {current:null,next:null};
+}
+
 function updateStatuses(){
- const now=new Date();
- const order=['opening','regular','late','notification','event'];
- let next=null;
- for(const k of order){if(DATES[k]>now){next=k;break;}}
- order.forEach(k=>{
-   const el=document.getElementById('status-'+k); if(!el)return;
-   el.className='status';
-   let text='';
-   if(k==='opening' && now>=DATES.opening && now<DATES.regular){el.classList.add('green');text=labels[lang].current;}
-   else if(k==='event' && now>=DATES.event){el.classList.add('green');text=labels[lang].current;}
-   else if(DATES[k]<now){el.classList.add('red');text=labels[lang].past;}
-   else if(k===next){el.classList.add('yellow');text=labels[lang].next;}
-   else {el.classList.add('gray');text='—';}
-   el.textContent=text;
- });
+  const now=new Date();
+  const phase=getPhase(now);
+  ORDER.forEach(k=>{
+    const el=document.getElementById('status-'+k);
+    if(!el)return;
+    el.className='status';
+    let text='—';
+    if(phase && k===phase.current){
+      el.classList.add('green');
+      text=labels[lang].current;
+    }else if(phase && k===phase.next){
+      el.classList.add('yellow');
+      text=labels[lang].next;
+    }else if(DATES[k] <= now){
+      el.classList.add('red');
+      text=labels[lang].past;
+    }else{
+      el.classList.add('gray');
+    }
+    el.textContent=text;
+  });
 }
+
 function updateTimer(){
- const now=new Date();
- let target=null,key=null;
- if(now<DATES.regular){target=DATES.regular;key='regular'}
- else if(now<DATES.late){target=DATES.late;key='late'}
- else if(now<DATES.event){target=DATES.event;key='event'}
- const label=document.getElementById('countLabel'), note=document.getElementById('nextMilestone');
- if(!target){label.textContent=labels[lang].open;note.textContent='December 18, 2026';['days','hours','minutes','seconds'].forEach(id=>document.getElementById(id).textContent='00');return;}
- const diff=Math.max(0,target-now);
- const d=Math.floor(diff/86400000),h=Math.floor(diff/3600000)%24,m=Math.floor(diff/60000)%60,s=Math.floor(diff/1000)%60;
- document.getElementById('days').textContent=String(d).padStart(2,'0');document.getElementById('hours').textContent=String(h).padStart(2,'0');document.getElementById('minutes').textContent=String(m).padStart(2,'0');document.getElementById('seconds').textContent=String(s).padStart(2,'0');
- label.textContent=labels[lang][key]; note.textContent=target.toLocaleString(lang==='de'?'de-DE':'en-US',{dateStyle:'long',timeStyle:'short'});
+  const now=new Date();
+  let target=null,key=null;
+  if(now < DATES.opening){ target=DATES.opening; key='regular'; }
+  else if(now < DATES.regular){ target=DATES.regular; key='regular'; }
+  else if(now < DATES.late){ target=DATES.late; key='late'; }
+  else if(now < DATES.event){ target=DATES.event; key='event'; }
+
+  const label=document.getElementById('countLabel');
+  const note=document.getElementById('nextMilestone');
+  if(!target){
+    label.textContent=labels[lang].open;
+    note.textContent=lang==='de'?'Festival beendet':'Festival completed';
+    ['days','hours','minutes','seconds'].forEach(id=>document.getElementById(id).textContent='00');
+    return;
+  }
+  const diff=Math.max(0,target-now);
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor(diff/3600000)%24;
+  const m=Math.floor(diff/60000)%60;
+  const sec=Math.floor(diff/1000)%60;
+  document.getElementById('days').textContent=String(d).padStart(2,'0');
+  document.getElementById('hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('minutes').textContent=String(m).padStart(2,'0');
+  document.getElementById('seconds').textContent=String(sec).padStart(2,'0');
+  label.textContent=labels[lang][key];
+  note.textContent=target.toLocaleString(lang==='de'?'de-DE':'en-US',{dateStyle:'long',timeStyle:'short'});
 }
-setInterval(updateTimer,1000);setInterval(updateStatuses,30000);
-document.getElementById('de').addEventListener('click',()=>setLang('de'));document.getElementById('en').addEventListener('click',()=>setLang('en'));setLang('en');
+
+setInterval(updateTimer,1000);
+setInterval(updateStatuses,1000);
+
+document.getElementById('de').addEventListener('click',()=>setLang('de'));
+document.getElementById('en').addEventListener('click',()=>setLang('en'));
+setLang('en');
+
 const modal=document.getElementById('submitModal');
 document.getElementById('submitBtn').addEventListener('click',()=>modal.classList.add('show'));
 document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('show'));
 modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('show')});
+
+document.getElementById('submissionForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.target;
+  const subject=encodeURIComponent('Festival Submission – '+f.filmTitle.value);
+  const body=encodeURIComponent(
+`Chris Storm Independent Horror Festival – Vol. 1
+
+Film Title: ${f.filmTitle.value}
+Director / Filmmaker: ${f.director.value}
+Email: ${f.email.value}
+Country: ${f.country.value}
+Runtime: ${f.runtime.value}
+Genre: ${f.genre.value}
+Film Link: ${f.filmLink.value}
+
+Short Synopsis:
+${f.description.value}
+
+Rights & Terms: Accepted`);
+  window.location.href=`mailto:chrisstormfilms@gmail.com?subject=${subject}&body=${body}`;
+});
 </script>
 </body>
 </html>
