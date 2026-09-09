@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chris Storm Independent Horror Festival — Vol. 1</title>
+<meta name="description" content="Chris Storm Independent Horror Festival — Online Horror Kurzfilmfestival. Vol. 1 — 18. Dezember 2026.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap');
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#060506;color:#e9dfcf;font-family:'Libre Baskerville',Georgia,serif;line-height:1.7}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.08;background:repeating-linear-gradient(0deg,#fff0 0,#fff0 2px,#fff1 3px)}
+h1,h2,h3,.nav,.lang,.btn{font-family:Cinzel,Georgia,serif;text-transform:uppercase;letter-spacing:2px}
+header{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:30px 20px;background:radial-gradient(circle at 50% 28%,#481b20 0,#17090d 28%,#060506 72%)}
+header:before{content:"";position:absolute;inset:0;background:linear-gradient(#0000 55%,#020202 100%);z-index:1}
+.hero{position:relative;z-index:2;max-width:900px}.hero img{width:min(450px,82vw);filter:drop-shadow(0 0 38px #7b151c)}
+.lang{position:absolute;top:24px;right:25px;z-index:5}.lang button{border:1px solid #713036;background:#0c0809;color:#e9dfcf;padding:9px 14px;margin-left:5px;cursor:pointer;font-family:Cinzel}.lang button.active{background:#8b171e}
+.kicker{color:#c5222a;font-size:13px;letter-spacing:4px;margin-top:10px}.date{font-family:Cinzel;font-size:1.3rem;letter-spacing:3px;color:#fff}
+h1{font-size:clamp(2.2rem,6vw,5rem);line-height:1.03;text-shadow:3px 3px #25080c;margin:15px 0}h2{font-size:2.2rem;border-bottom:1px solid #4e171d;padding-bottom:12px}h3{color:#ca252c;font-size:1.05rem}
+section{max-width:1080px;margin:auto;padding:80px 24px}.intro{text-align:center;max-width:850px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}.card{background:linear-gradient(145deg,#160b0e,#090709);border:1px solid #42151a;padding:25px;box-shadow:0 12px 35px #000}.card p{color:#bdb3a6}.divider{text-align:center;color:#a41a21;letter-spacing:12px}
+.btn{display:inline-block;margin:8px;padding:13px 23px;border:1px solid #9b1b22;color:#eee2d0;text-decoration:none;background:#11090b}.btn.primary{background:#8c151c}.highlight{border-left:3px solid #9b1b22;padding-left:20px}
+footer{text-align:center;border-top:1px solid #351014;padding:42px 20px;color:#887f77}.hidden{display:none}.small{color:#90877e}
+</style>
+</head>
+<body>
+<header>
+<div class="lang"><button id="deBtn" class="active" onclick="setLang('de')">DE</button><button id="enBtn" onclick="setLang('en')">EN</button></div>
+<div class="hero">
+<img src="logo.png" alt="Chris Storm Independent Horror Festival Vol. 1">
+<div class="kicker" data-de="Online Horror Kurzfilmfestival" data-en="Online Horror Short Film Festival">Online Horror Kurzfilmfestival</div>
+<h1>Chris Storm<br>Independent Horror Festival</h1>
+<p class="date">VOL. 1 · 18. DEZEMBER 2026</p>
+<p data-de="Ein Online-Festival für unabhängige Horrorfilmemacher, mutige Geschichten und neue Stimmen aus aller Welt." data-en="An online festival for independent horror filmmakers, bold stories and new voices from around the world.">Ein Online-Festival für unabhängige Horrorfilmemacher, mutige Geschichten und neue Stimmen aus aller Welt.</p>
+<a class="btn primary" href="#submit" data-de="Film einreichen" data-en="Submit Your Film">Film einreichen</a>
+<a class="btn" href="#rules" data-de="Regeln" data-en="Rules & Terms">Regeln</a>
+</div>
+</header>
+
+<section class="intro">
+<h2 data-de="Willkommen bei Vol. 1" data-en="Welcome to Vol. 1">Willkommen bei Vol. 1</h2>
+<p data-de="<strong>Chris Storm Independent Horror Festival</strong> ist ein <strong>Online-Horror-Kurzfilmfestival</strong>, das unabhängige Filmemacher und ihre eigenen Visionen feiert." data-en="<strong>Chris Storm Independent Horror Festival</strong> is an <strong>online horror short film festival</strong> celebrating independent filmmakers and their own visions."><strong>Chris Storm Independent Horror Festival</strong> ist ein <strong>Online-Horror-Kurzfilmfestival</strong>, das unabhängige Filmemacher und ihre eigenen Visionen feiert.</p>
+<p data-de="No-Budget, Low-Budget und Independent-Produktionen sind willkommen. Entscheidend sind Kreativität, Atmosphäre und die Geschichte – nicht die Größe des Budgets." data-en="No-budget, low-budget and independent productions are welcome. Creativity, atmosphere and story matter more than the size of the budget.">No-Budget, Low-Budget und Independent-Produktionen sind willkommen. Entscheidend sind Kreativität, Atmosphäre und die Geschichte – nicht die Größe des Budgets.</p>
+<div class="divider">✦ ✦ ✦</div>
+</section>
+
+<section id="submit"><h2 data-de="Einreichungen" data-en="Submissions">Einreichungen</h2>
+<div class="grid">
+<div class="card"><h3 data-de="Horror-Kurzfilme" data-en="Horror Short Films">Horror-Kurzfilme</h3><p data-de="Psychologischer Horror, Übernatürliches, Found Footage, Creature Horror, Experimental, Dark Comedy und mehr." data-en="Psychological, supernatural, found footage, creature, experimental, dark comedy and more.">Psychologischer Horror, Übernatürliches, Found Footage, Creature Horror, Experimental, Dark Comedy und mehr.</p></div>
+<div class="card"><h3>No / Low Budget</h3><p data-de="Produktionen mit kleinen Budgets sind ausdrücklich willkommen." data-en="Productions made with limited budgets are especially welcome.">Produktionen mit kleinen Budgets sind ausdrücklich willkommen.</p></div>
+<div class="card"><h3 data-de="International" data-en="International">International</h3><p data-de="Filmemacher aus der ganzen Welt können teilnehmen." data-en="Filmmakers from around the world can participate.">Filmemacher aus der ganzen Welt können teilnehmen.</p></div>
+<div class="card"><h3 data-de="Kostenlose Einreichung" data-en="Free Entry">Kostenlose Einreichung</h3><p><strong>€0,00</strong> — Vol. 1</p></div>
+</div></section>
+
+<section><h2 data-de="Die Jury" data-en="The Jury">Die Jury</h2>
+<div class="highlight"><p data-de="Eine <strong>dreiköpfige Jury aus Film-Liebhabern</strong> bewertet die ausgewählten Kurzfilme. Bewertet werden unter anderem Kreativität, Storytelling, Atmosphäre, Regie und Gesamteindruck." data-en="A <strong>three-person jury of film lovers</strong> will judge the selected short films, considering creativity, storytelling, atmosphere, direction and overall impact.">Eine <strong>dreiköpfige Jury aus Film-Liebhabern</strong> bewertet die ausgewählten Kurzfilme. Bewertet werden unter anderem Kreativität, Storytelling, Atmosphäre, Regie und Gesamteindruck.</p><p><strong>Chris Storm</strong> ist eines der drei Jury-Mitglieder.</p><p class="small" data-de="Die beiden weiteren Jury-Mitglieder werden vom Festival bekannt gegeben." data-en="The other two jury members will be announced by the festival.">Die beiden weiteren Jury-Mitglieder werden vom Festival bekannt gegeben.</p></div>
+</section>
+
+<section><h2 data-de="Awards" data-en="Awards">Awards</h2><div class="grid">
+<div class="card"><h3>Best Horror Short</h3></div><div class="card"><h3>Best Director</h3></div><div class="card"><h3>Best No-Budget Film</h3></div><div class="card"><h3>Best Low-Budget Film</h3></div><div class="card"><h3>Most Original Nightmare</h3></div><div class="card"><h3>Audience Choice</h3></div>
+</div></section>
+
+<section id="rules"><h2 data-de="Regeln & Teilnahmebedingungen" data-en="Rules & Terms">Regeln & Teilnahmebedingungen</h2>
+<ul>
+<li data-de="Nur Horror-Kurzfilme." data-en="Horror short films only.">Nur Horror-Kurzfilme.</li>
+<li data-de="Maximale Laufzeit: 30 Minuten inklusive Abspann." data-en="Maximum runtime: 30 minutes including credits.">Maximale Laufzeit: 30 Minuten inklusive Abspann.</li>
+<li data-de="No-Budget, Low-Budget und Independent-Produktionen sind willkommen." data-en="No-budget, low-budget and independent productions are welcome.">No-Budget, Low-Budget und Independent-Produktionen sind willkommen.</li>
+<li data-de="Keine Premiere erforderlich." data-en="No premiere requirement.">Keine Premiere erforderlich.</li>
+<li data-de="Nicht-englische Filme benötigen englische Untertitel." data-en="Non-English films require English subtitles.">Nicht-englische Filme benötigen englische Untertitel.</li>
+<li data-de="Der Einreicher muss die erforderlichen Rechte am Film und Material besitzen." data-en="The submitter must hold the necessary rights to the film and materials.">Der Einreicher muss die erforderlichen Rechte am Film und Material besitzen.</li>
+<li data-de="Die Einreichung garantiert keine Auswahl." data-en="Submission does not guarantee selection.">Die Einreichung garantiert keine Auswahl.</li>
+<li data-de="Der Filmemacher behält das Eigentum an seinem Film." data-en="Filmmakers retain ownership of their films.">Der Filmemacher behält das Eigentum an seinem Film.</li>
+</ul></section>
+
+<section><h2 data-de="Festival-Termine" data-en="Festival Dates">Festival-Termine</h2><div class="grid">
+<div class="card"><h3 data-de="Einreichungsstart" data-en="Opening">Einreichungsstart</h3><p>01.09.2026</p></div>
+<div class="card"><h3>Regular Deadline</h3><p>31.10.2026</p></div>
+<div class="card"><h3>Late Deadline</h3><p>13.11.2026</p></div>
+<div class="card"><h3 data-de="Benachrichtigung" data-en="Notification">Benachrichtigung</h3><p>28.11.2026</p></div>
+<div class="card"><h3 data-de="Festival" data-en="Festival">Festival</h3><p>18.12.2026<br><strong>ONLINE</strong></p></div>
+</div></section>
+
+<section class="intro"><h2 data-de="Dein Horror. Deine Vision." data-en="Your Horror. Your Vision.">Dein Horror. Deine Vision.</h2><p data-de="Reiche deinen Kurzfilm ein und werde Teil von Vol. 1." data-en="Submit your short film and become part of Vol. 1.">Reiche deinen Kurzfilm ein und werde Teil von Vol. 1.</p><a class="btn primary" href="#submit" data-de="Zu den Einreichungen" data-en="Submit to Vol. 1">Zu den Einreichungen</a></section>
+<footer><strong>CHRIS STORM INDEPENDENT HORROR FESTIVAL · VOL. 1</strong><br>ONLINE · 18. DEZEMBER 2026<br><span class="small">No Budget. Low Budget. Independent Horror Short Films.</span></footer>
+<script>
+function setLang(lang){
+ document.documentElement.lang=lang;
+ document.querySelectorAll('[data-de]').forEach(e=>e.innerHTML=e.dataset[lang]);
+ document.getElementById('deBtn').classList.toggle('active',lang==='de');
+ document.getElementById('enBtn').classList.toggle('active',lang==='en');
+ localStorage.setItem('festivalLang',lang);
+}
+setLang(localStorage.getItem('festivalLang')||'de');
+</script>
+</body></html>
